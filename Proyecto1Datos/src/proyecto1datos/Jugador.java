@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto1datos;
 
-/**
- *
- * @author ExtremeTech
- */
+import java.util.ArrayList;
+
 public class Jugador {
-    
+
+    public Jugador(ArrayList<Carton> c, int n) {
+        this.cartones = c;
+        this.numero = n;
+    }
+
+    public ArrayList<Carton> getCartones() {
+        return cartones;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "cartones=" + cartones + ", #" + numero + "}";
+    }
+
+    private final ArrayList<Carton> cartones;
+    private final int numero;
 }
