@@ -1,9 +1,13 @@
 package proyecto1datos;
 
-import java.util.List;
-
 public class Juego {
+
+    public Juego(int cantjug, int maxcart) {
+        this.tombola = new Tombola();
+        this.players = new Participantes(cantjug, maxcart);
+    }
     
-    private Tombola tombola;
-    private List<Jugador> players;
+    
+    private final Tombola tombola;
+    private final Participantes players;
 }

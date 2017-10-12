@@ -18,6 +18,11 @@ public  class Tombola {
         Collections.shuffle(nums);
         return nums;
     }
+
+    @Override
+    public String toString() {
+        return "Tombola{" + "pila_bolitas=" + pila_bolitas.toString() + "}";
+    }
     
     public int getbolita(){
         pila_bolitas.add(generados.remove(0));
