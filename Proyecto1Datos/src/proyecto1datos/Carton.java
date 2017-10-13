@@ -74,6 +74,17 @@ public final class Carton {
         int pos = ubicacion(i);
         return carton.get(pos).contains(Integer.toString(i));
     }
+    
+    public void cambiaX(int n){
+        int pos = ubicacion(n);
+        String x = "X";
+        for(String s : carton.get(pos)){
+            if(Integer.toString(n).equals(s)){
+                s = x;
+                break;
+            }
+        }
+    }
 
     @Override
     public String toString() {
