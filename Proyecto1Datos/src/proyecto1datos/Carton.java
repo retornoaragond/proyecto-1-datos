@@ -8,18 +8,23 @@ public final class Carton {
     public Carton() {
         carton = new ArrayList<>();
         rellenar();
+        System.out.println(toString());
     }
 
     public void rellenar() {
         ArrayList<Integer> nums;
-        ArrayList<String> columna = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
+            ArrayList<String> columna = new ArrayList<>();
             nums = generar(i);
             for (int j = 0; j < 5; j++) {
                 columna.add(Integer.toString(nums.get(j)));
             }
             carton.add(columna);
         }
+    }
+
+    public ArrayList<ArrayList<String>> getCarton() {
+        return carton;
     }
 
     public ArrayList<Integer> generar(int fila) {
@@ -81,17 +86,16 @@ public final class Carton {
         for(String s : carton.get(pos)){
             if(Integer.toString(n).equals(s)){
                 s = x;
-                break;
             }
         }
     }
 
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder("[\n");
+        StringBuilder s = new StringBuilder("          B      I       N       G       O\n");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-                s.append("[").append(carton.get(j).get(i));
+                s.append("\t[").append(carton.get(j).get(i));
                 if(j==4){
                     s.append("]\n");
                 }else{
@@ -99,7 +103,7 @@ public final class Carton {
                 }
             }
         }
-        s.append("]\n");
+        s.append("\n");
         return s.toString();
     }
 

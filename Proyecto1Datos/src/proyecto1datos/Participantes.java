@@ -16,10 +16,11 @@ public class Participantes {
         for (int i = 0; i < c; i++) {
             n = rand.nextInt(nc) + 1;
             ArrayList<Carton> cartones = new ArrayList<>();
-            for (int j = 1; j < n; j++) {
+            for (int j = 0; j < n; j++) {
                 cartones.add(new Carton());
             }
             play.add(new Jugador(cartones, i+1));
+            System.out.println(play.toString());
         }
         return play;
     }
