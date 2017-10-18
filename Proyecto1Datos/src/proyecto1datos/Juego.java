@@ -1,3 +1,9 @@
+/*
+    Integrantes:
+        Esteban Espinoza Fallas 402290345
+        Alejandro Navarro Valverde 116070118
+*/
+
 package proyecto1datos;
 
 public class Juego {

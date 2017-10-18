@@ -1,3 +1,8 @@
+/*
+    Integrantes:
+        Esteban Espinoza Fallas 402290345
+        Alejandro Navarro Valverde 116070118
+*/
 package proyecto1datos;
 
 import java.io.FileWriter;
@@ -31,7 +36,7 @@ public class ToHTML {
     }
 
     public void ronda(int r, Tombola t, Participantes p) {
-        gen.append("<h2>Ronda N°");
+        gen.append("<h2>Ronda N&deg");
         gen.append(r);
         gen.append("</h2>\n\n");
         gen.append("<table border=4>\n");
@@ -49,7 +54,7 @@ public class ToHTML {
         gen.append("</tr>\n");
         gen.append("</table>\n\n");
         for (Jugador j : p.getPlayers()) {
-            gen.append("<h3>Juegador N°");
+            gen.append("<h3>Jugador N&deg");
             gen.append(j.getNumero());
             gen.append(" (");
             gen.append(j.getCartones().size());
@@ -84,7 +89,7 @@ public class ToHTML {
     }
 
     public void ganador(int i) {
-        gen.append("<h1><font color=\"green\">GANADOR: JUGADOR N°");
+        gen.append("<h1><font color=\"green\">GANADOR: JUGADOR N&deg");
         gen.append(i);
         gen.append("</font></h1>\n");
     }
