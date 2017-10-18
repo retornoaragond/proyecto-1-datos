@@ -10,31 +10,32 @@ public class Juego {
     }
 
     public void jugar(String game) {
-        ToHTML html = new ToHTML("");
+        ToHTML html = new ToHTML();
         html.parametros(cantjug, maxcart, game);
         int numero ; 
+        int round = 0;
         while (!isWinner) {
-            System.out.println("hola estoy aqui");
+            round++;
             numero = tombola.getbolita();
+            System.out.printf("Numero de la tombola: %d\n",numero);
             for (Jugador j : players.getPlayers()) {
-                System.out.println(j.toString());
                 for (Carton c : j.getCartones()) {
                     if (c.isIn(numero)) {
                         c.cambiaX(numero);
                     }
                     tipojuego(game, c, j.getNumero());
                 }
-                j.toString();
+                System.out.println(j.toString());
             }
-            html.ronda(tombola, players);  
+            html.ronda(round,tombola, players);  
         }
         html.ganador(winner);
+        System.out.println("ganador fue:"+winner);
         html.end();
         html.toHTML();
     }
 
     public void tipojuego(String game, Carton c, int n) {
-        System.out.println(n);
         switch (game) {
             case "(1)Linea Completa":
                 checkLinea(c, n);

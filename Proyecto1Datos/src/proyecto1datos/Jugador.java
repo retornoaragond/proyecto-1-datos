@@ -19,7 +19,8 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{\n" + "cartones=" + cartones.toString() + ", #" + numero + "}\n";
+        return "Jugador #" + numero + "\nCartones ={\n" + cartones.toString() + "}\n";
+//        return "Jugador{\n" + "cartones=" + cartones.toString() + ", #" + numero + "}\n";
     }
 
     private final ArrayList<Carton> cartones;

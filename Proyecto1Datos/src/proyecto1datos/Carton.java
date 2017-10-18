@@ -59,35 +59,40 @@ public final class Carton {
         return num;
     }
 
-    public int ubicacion(int x) {
-        if (1 <= x && x <= 15) {
+    public int ubicacionx(int n) {
+        if (1 <= n && n <= 15) {
             return 0;
-        } else if (16 <= x && x <= 30) {
+        } else if (16 <= n && n <= 30) {
             return 1;
-        } else if (31 <= x && x <= 45) {
+        } else if (31 <= n && n <= 45) {
             return 2;
-        } else if (46 <= x && x <= 60) {
+        } else if (46 <= n && n <= 60) {
             return 3;
-        } else if (61 <= x && x <= 75) {
+        } else if (61 <= n && n <= 75) {
             return 4;
         } else {
             return -1;
         }
     }
+    
+    public int ubicaciony(int n,ArrayList<String> l){
+         for (int i = 0; i < 5; i++) {
+             if(l.get(i).equals(Integer.toString(n))){
+                 return i;
+             }
+         }
+         return -1;
+    }
 
     public boolean isIn(int i) {
-        int pos = ubicacion(i);
+        int pos = ubicacionx(i);
         return carton.get(pos).contains(Integer.toString(i));
     }
     
     public void cambiaX(int n){
-        int pos = ubicacion(n);
-        String x = "X";
-        for(String s : carton.get(pos)){
-            if(Integer.toString(n).equals(s)){
-                s = x;
-            }
-        }
+        int pox = ubicacionx(n);
+        int posy = ubicaciony(n, carton.get(pox));
+        carton.get(pox).set(posy,"X");
     }
 
     @Override

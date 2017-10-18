@@ -19,6 +19,10 @@ public  class Tombola {
         return nums;
     }
 
+    public ArrayList<Integer> getPila_bolitas() {
+        return pila_bolitas;
+    }
+
     @Override
     public String toString() {
         return "Tombola{" + "pila_bolitas=" + pila_bolitas.toString() + "}";
